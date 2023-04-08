@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.7",
         "mll-lab/laravel-graphql-playground": "^2.6",
         "nuwave/lighthouse": "^6.6",
+        "spatie/geocoder": "^3.14",
         "tymon/jwt-auth": "^2.0",
         "webonyx/graphql-php": "^15.2"
     },

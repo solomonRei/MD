@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Tymon\JWTAuth\Facades\JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
 
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string|min:6',
@@ -24,7 +24,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
-        if (! $token = auth()->attempt($validator->validated())) {
+        if (!$token = auth()->attempt($validator->validated())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
         return $this->createNewToken($token);
@@ -70,30 +70,58 @@ class AuthController extends Controller
         return response()->json(['message' => 'Successfully logged out']);
     }
 
-    public function refresh() {
+    public function refresh()
+    {
         return $this->createNewToken(auth()->refresh());
     }
+
     /**
      * Get the authenticated User.
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function userProfile() {
+    public function userProfile()
+    {
         return response()->json(auth()->user());
     }
+
     /**
      * Get the token array structure.
      *
-     * @param  string $token
+     * @param string $token
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    protected function createNewToken($token){
+    protected function createNewToken($token)
+    {
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60,
             'user' => auth()->user()
         ]);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function changeCity(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'city' => 'required|string|min:3',
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
+        $user = User::find(auth()->user()->id);
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+        $user->city = $request->city;
+        $user->save();
+
+        return response()->json(['message' => 'City was changed']);
     }
 }

@@ -186,6 +186,7 @@ return [
          * Package Service Providers...
          */
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        Spatie\Geocoder\GeocoderServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -212,6 +213,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Geocoder' => Spatie\Geocoder\Facades\Geocoder::class,
     ])->toArray(),
 
 ];

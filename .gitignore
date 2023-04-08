@@ -1,0 +1,29 @@
+# Laravel 9 specific
+/node_modules
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.*
+.phpunit.result.cache
+.nova-credentials
+.nova-workspace
+/.phpstorm.meta.php
+/.phpstorm.meta.php.sandbox
+/.phpstorm.meta.php.workspace
+/.vscode
+Homestead.json
+Homestead.yaml
+npm-debug.log*
+yarn-error.log*
+
+# IDE and Editor specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

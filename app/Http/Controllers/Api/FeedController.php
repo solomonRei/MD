@@ -27,8 +27,41 @@ class FeedController extends Controller
         if ($feeds->isEmpty()) {
             return response()->json(['error' => 'Feeds not found'], 404);
         }
-        return response()->json(['feeds' => $feeds, 'user' => auth()->user()], 201);
+
+        $results = [];
+
+        foreach ($feeds as $feed) {
+            $ratingCommentShare = RatingCommentShare::where('feed_id', $feed->id)->first();
+            if ($ratingCommentShare !== null) {
+                $commentsCount = Comment::where('rating_comment_share_id', $ratingCommentShare->id)->count();
+                $results[] = [
+                    'id' => $feed->id,
+                    'file' => url('/uploads/' . $feed->file->filename),
+                    'title' => '',
+                    'status' => $feed->status,
+                    'description' => $feed->description,
+                    'rating' => $ratingCommentShare->rating,
+                    'comments' => $commentsCount,
+                    'shares' => $ratingCommentShare->shares,
+                ];
+            } else {
+                $results[] = [
+                    'id' => $feed->id,
+                    'file' => url('/uploads/' . $feed->file->filename),
+                    'title' => '',
+                    'status' => $feed->status,
+                    'description' => $feed->description,
+                    'rating' => 0,
+                    'comments' => 0,
+                    'shares' => 0,
+                ];
+            }
+        }
+
+        return response()->json(['feeds' => $results, 'user' => auth()->user() === null ? [] : auth()->user()], 201);
+
     }
+
 
     public function getByUser(): \Illuminate\Http\JsonResponse
     {
@@ -40,8 +73,39 @@ class FeedController extends Controller
             return response()->json(['error' => 'Feeds not found'], 404);
         }
 
-        return response()->json(['feeds' => $feeds, 'user' => auth()->user()], 201);
+        $results = [];
+
+        foreach ($feeds as $feed) {
+            $ratingCommentShare = RatingCommentShare::where('feed_id', $feed->id)->first();
+            if ($ratingCommentShare !== null) {
+                $commentsCount = Comment::where('rating_comment_share_id', $ratingCommentShare->id)->count();
+                $results[] = [
+                    'id' => $feed->id,
+                    'file' => url('/uploads/' . $feed->file->filename),
+                    'title' => '',
+                    'status' => $feed->status,
+                    'description' => $feed->description,
+                    'rating' => $ratingCommentShare->rating,
+                    'comments' => $commentsCount,
+                    'shares' => $ratingCommentShare->shares,
+                ];
+            } else {
+                $results[] = [
+                    'id' => $feed->id,
+                    'file' => url('/uploads/' .$feed->file->filename),
+                    'title' => '',
+                    'status' => $feed->status,
+                    'description' => $feed->description,
+                    'rating' => 0,
+                    'comments' => 0,
+                    'shares' => 0,
+                ];
+            }
+        }
+
+        return response()->json(['feeds' => $results, 'user' => auth()->user() === null ? [] : auth()->user()], 201);
     }
+
 
     public function show($id): \Illuminate\Http\JsonResponse
     {
@@ -51,7 +115,33 @@ class FeedController extends Controller
             return response()->json(['error' => 'Feed not found'], 404);
         }
 
-        return response()->json(['feed' => $feed, 'user' => auth()->user()], 201);
+        $ratingCommentShare = RatingCommentShare::where('feed_id', $feed->id)->first();
+        if ($ratingCommentShare !== null) {
+            $commentsCount = Comment::where('rating_comment_share_id', $ratingCommentShare->id)->count();
+            $results = [
+                'id' => $feed->id,
+                'file' => url('/uploads/' . $feed->file->filename),
+                'title' => '',
+                'status' => $feed->status,
+                'description' => $feed->description,
+                'rating' => $ratingCommentShare->rating,
+                'comments' => $commentsCount,
+                'shares' => $ratingCommentShare->shares,
+            ];
+        } else {
+            $results = [
+                'id' => $feed->id,
+                'file' => url('/uploads/' . $feed->file->filename),
+                'title' => '',
+                'status' => $feed->status,
+                'description' => $feed->description,
+                'rating' => 0,
+                'comments' => 0,
+                'shares' => 0,
+            ];
+        }
+
+        return response()->json(['feed' => $results, 'user' => auth()->user() === null ? [] : auth()->user()], 201);
     }
 
     private function getComments($feedId)

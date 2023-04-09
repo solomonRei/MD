@@ -28,6 +28,6 @@ class RatingCommentShare extends Model
 
     public function comments()
     {
-        return $this->belongsToMany(Comment::class, 'rating_comments_shares');
+        return $this->belongsToMany(Comment::class, 'rating_comments_shares', 'id', 'rating_comment_share_id');
     }
 }

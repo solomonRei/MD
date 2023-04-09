@@ -15,6 +15,7 @@ class Feed extends Model
         'file_id',
         'resolved_by',
         'content',
+        'status'
     ];
 
     protected $casts = [
@@ -33,9 +34,18 @@ class Feed extends Model
         return Str::limit($this->content, $words, $end);
     }
 
+    public function ratingCommentShare()
+    {
+        return $this->belongsTo(RatingCommentShare::class);
+    }
 
     public function file()
     {
         return $this->belongsTo(File::class);
+    }
+
+    public function file2()
+    {
+        return $this->hasOne(File::class);
     }
 }

@@ -8,6 +8,7 @@ use App\Models\Comment;
 use App\Models\Feed;
 use App\Models\File;
 use App\Models\RatingCommentShare;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -67,7 +68,18 @@ class FeedController extends Controller
     {
         if ($id) {
             $user_id = $id;
+            $user = User::find($id);
+
+            if (!$user) {
+                return response()->json([
+                    'message' => 'User not found.',
+                ], 404);
+            }
         } else {
+            if (!auth()->user()) {
+                return response()->json(['error' => ' Unthorized'], 404);
+            }
+            $user = auth()->user();
             $user_id = auth()->user()->id;
         }
 
@@ -107,7 +119,7 @@ class FeedController extends Controller
             }
         }
 
-        return response()->json(['feeds' => $results, 'user' => auth()->user() === null ? [] : auth()->user()], 201);
+        return response()->json(['feeds' => $results, 'user' => $user], 201);
     }
 
 

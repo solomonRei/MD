@@ -63,9 +63,13 @@ class FeedController extends Controller
     }
 
 
-    public function getByUser(): \Illuminate\Http\JsonResponse
+    public function getByUser($id = null): \Illuminate\Http\JsonResponse
     {
-        $user_id = auth()->user()->id;
+        if ($id) {
+            $user_id = $id;
+        } else {
+            $user_id = auth()->user()->id;
+        }
 
         $feeds = Feed::where('user_id', $user_id)->get();
 
@@ -105,6 +109,8 @@ class FeedController extends Controller
 
         return response()->json(['feeds' => $results, 'user' => auth()->user() === null ? [] : auth()->user()], 201);
     }
+
+
 
 
     public function show($id): \Illuminate\Http\JsonResponse

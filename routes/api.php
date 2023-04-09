@@ -35,7 +35,7 @@ Route::group([
     Route::prefix('feed')->group(function () {
         Route::get('/getAll', [FeedController::class, 'index']);
         Route::get('/get/{id}', [FeedController::class, 'show']);
-        Route::get('/getByUser', [FeedController::class, 'getByUser']);
+        Route::get('/getByUser/{id?}', [FeedController::class, 'getByUser']);
         Route::get('/getAllComment/{feedId}', [FeedActionsController::class, 'getComments']);
         Route::get('/getLikesAmount/{feedId}', [FeedActionsController::class, 'getLikes']);
         Route::get('/getSharesAmount/{feedId}', [FeedActionsController::class, 'getShares']);

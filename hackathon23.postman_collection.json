@@ -1,0 +1,2788 @@
+{
+	"info": {
+		"_postman_id": "eaaf5fa6-d03e-415c-80d1-d17261e28945",
+		"name": "hackathon23",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11772011"
+	},
+	"item": [
+		{
+			"name": "feed",
+			"item": [
+				{
+					"name": "api/auth/feed/getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODA5NzM2NDYsImV4cCI6MTY4MDk3NzI0NiwibmJmIjoxNjgwOTczNjQ2LCJqdGkiOiI2cHpPS2pib1FYWWsxVk01Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.9ygVzW2d4LYeVpi1QWFOnQ7ouWjtI-Ez8mKcYMyg0zQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{IP}}/api/auth/feed/getAll",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"getAll"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/auth/feed/getAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "3.80.182.138/api/auth/feed/getAll",
+									"host": [
+										"3",
+										"80",
+										"182",
+										"138"
+									],
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"getAll"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 06:50:31 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"feeds\": [\n        {\n            \"id\": 3,\n            \"file\": \"http://3.80.182.138/uploads/mockup5-1.png\",\n            \"title\": \"\",\n            \"status\": 0,\n            \"description\": null,\n            \"rating\": 1,\n            \"comments\": 5,\n            \"shares\": 4\n        },\n        {\n            \"id\": 4,\n            \"file\": \"http://3.80.182.138/uploads/mockup5-1.png\",\n            \"title\": \"\",\n            \"status\": 0,\n            \"description\": null,\n            \"rating\": 0,\n            \"comments\": 0,\n            \"shares\": 0\n        },\n        {\n            \"id\": 5,\n            \"file\": \"http://3.80.182.138/uploads/mockup5-1.png\",\n            \"title\": \"\",\n            \"status\": 0,\n            \"description\": null,\n            \"rating\": 0,\n            \"comments\": 0,\n            \"shares\": 0\n        },\n        {\n            \"id\": 6,\n            \"file\": \"http://3.80.182.138/uploads/qxq1EsnKsXrf811iz6idl6rLdDmRmh4aDFQ0fB8v.png\",\n            \"title\": \"\",\n            \"status\": 0,\n            \"description\": null,\n            \"rating\": 0,\n            \"comments\": 0,\n            \"shares\": 0\n        },\n        {\n            \"id\": 7,\n            \"file\": \"http://3.80.182.138/uploads/E4SgoNKuPTMEyJZ2KRG4KVGG7GYTS7HnHtl26SzH.png\",\n            \"title\": \"\",\n            \"status\": 0,\n            \"description\": null,\n            \"rating\": 0,\n            \"comments\": 0,\n            \"shares\": 0\n        }\n    ],\n    \"user\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "api/auth/feed/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODA5NzM2NDYsImV4cCI6MTY4MDk3NzI0NiwibmJmIjoxNjgwOTczNjQ2LCJqdGkiOiI2cHpPS2pib1FYWWsxVk01Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.9ygVzW2d4LYeVpi1QWFOnQ7ouWjtI-Ez8mKcYMyg0zQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "Testik аплоалвдовылдоалвыоавыдлаодовылаовлд ывоалывдаоывдлоаылдвао длыовадлывоаылдваоывдл оывлдаоывдлаоылдваоывлд оывдлаоывлдаоывлдоаыдл оывлдаоывдлаовылдаоылд вол",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/tlz27/OneDrive/Изображения/mockup5-1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/feed/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/auth/feed/create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "Testik аплоалвдовылдоалвыоавыдлаодовылаовлд ывоалывдаоывдлоаылдвао длыовадлывоаылдваоывдл оывлдаоывдлаоылдваоывлд оывдлаоывлдаоывлдоаыдл оывлдаоывдлаовылдаоылд вол",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/tlz27/OneDrive/Изображения/mockup5-1.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/create",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 17:27:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 17:27:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Feed created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "api/auth/feed/get/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODA5NzM2NDYsImV4cCI6MTY4MDk3NzI0NiwibmJmIjoxNjgwOTczNjQ2LCJqdGkiOiI2cHpPS2pib1FYWWsxVk01Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.9ygVzW2d4LYeVpi1QWFOnQ7ouWjtI-Ez8mKcYMyg0zQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{IP}}/api/auth/feed/get/1",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/get/15",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"get",
+										"15"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 17:53:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 17:53:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Feed not found\"\n}"
+						},
+						{
+							"name": "api/auth/feed/get/1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{IP}}/api/auth/feed/get/3",
+									"host": [
+										"{{IP}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"get",
+										"3"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 06:51:14 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"feed\": {\n        \"id\": 3,\n        \"file\": \"http://3.80.182.138/uploads/mockup5-1.png\",\n        \"title\": \"\",\n        \"status\": 0,\n        \"description\": null,\n        \"rating\": 1,\n        \"comments\": 5,\n        \"shares\": 4\n    },\n    \"user\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "api/auth/feed/getByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODA5NzM2NDYsImV4cCI6MTY4MDk3NzI0NiwibmJmIjoxNjgwOTczNjQ2LCJqdGkiOiI2cHpPS2pib1FYWWsxVk01Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.9ygVzW2d4LYeVpi1QWFOnQ7ouWjtI-Ez8mKcYMyg0zQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{IP}}/api/auth/feed/getByUser",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"getByUser"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/auth/feed/getByUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/getByUser",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"getByUser"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 17:55:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 17:55:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"file_id\": null,\n        \"content\": \"Testik аплоалвдовылдоалвыоавыдлаодовылаовлд ывоалывдаоывдлоаылдвао длыовадлывоаылдваоывдл оывлдаоывдлаоылдваоывлд оывдлаоывлдаоывлдоаыдл оывлдаоывдлаовылдаоылд вол\",\n        \"created_at\": \"2023-04-08T17:11:19.000000Z\",\n        \"updated_at\": \"2023-04-08T17:11:19.000000Z\"\n    },\n    {\n        \"id\": 2,\n        \"user_id\": 1,\n        \"file_id\": null,\n        \"content\": \"Testik аплоалвдовылдоалвыоавыдлаодовылаовлд ывоалывдаоывдлоаылдвао длыовадлывоаылдваоывдл оывлдаоывдлаоылдваоывлд оывдлаоывлдаоывлдоаыдл оывлдаоывдлаовылдаоылд вол\",\n        \"created_at\": \"2023-04-08T17:14:12.000000Z\",\n        \"updated_at\": \"2023-04-08T17:14:12.000000Z\"\n    },\n    {\n        \"id\": 3,\n        \"user_id\": 1,\n        \"file_id\": null,\n        \"content\": \"Testik аплоалвдовылдоалвыоавыдлаодовылаовлд ывоалывдаоывдлоаылдвао длыовадлывоаылдваоывдл оывлдаоывдлаоылдваоывлд оывдлаоывлдаоывлдоаыдл оывлдаоывдлаовылдаоылд вол\",\n        \"created_at\": \"2023-04-08T17:14:34.000000Z\",\n        \"updated_at\": \"2023-04-08T17:14:34.000000Z\"\n    },\n    {\n        \"id\": 4,\n        \"user_id\": 1,\n        \"file_id\": null,\n        \"content\": \"Testik аплоалвдовылдоалвыоавыдлаодовылаовлд ывоалывдаоывдлоаылдвао длыовадлывоаылдваоывдл оывлдаоывдлаоылдваоывлд оывдлаоывлдаоывлдоаыдл оывлдаоывдлаовылдаоылд вол\",\n        \"created_at\": \"2023-04-08T17:17:06.000000Z\",\n        \"updated_at\": \"2023-04-08T17:17:06.000000Z\"\n    },\n    {\n        \"id\": 5,\n        \"user_id\": 1,\n        \"file_id\": null,\n        \"content\": \"Testik аплоалвдовылдоалвыоавыдлаодовылаовлд ывоалывдаоывдлоаылдвао длыовадлывоаылдваоывдл оывлдаоывдлаоылдваоывлд оывдлаоывлдаоывлдоаыдл оывлдаоывдлаовылдаоылд вол\",\n        \"created_at\": \"2023-04-08T17:18:15.000000Z\",\n        \"updated_at\": \"2023-04-08T17:18:15.000000Z\"\n    },\n    {\n        \"id\": 6,\n        \"user_id\": 1,\n        \"file_id\": 4,\n        \"content\": \"Testik аплоалвдовылдоалвыоавыдлаодовылаовлд ывоалывдаоывдлоаылдвао длыовадлывоаылдваоывдл оывлдаоывдлаоылдваоывлд оывдлаоывлдаоывлдоаыдл оывлдаоывдлаовылдаоылд вол\",\n        \"created_at\": \"2023-04-08T17:21:55.000000Z\",\n        \"updated_at\": \"2023-04-08T17:21:55.000000Z\"\n    },\n    {\n        \"id\": 7,\n        \"user_id\": 1,\n        \"file_id\": 5,\n        \"content\": \"Testik аплоалвдовылдоалвыоавыдлаодовылаовлд ывоалывдаоывдлоаылдвао длыовадлывоаылдваоывдл оывлдаоывдлаоылдваоывлд оывдлаоывлдаоывлдоаыдл оывлдаоывдлаовылдаоылд вол\",\n        \"created_at\": \"2023-04-08T17:27:56.000000Z\",\n        \"updated_at\": \"2023-04-08T17:27:56.000000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "api/auth/feed/update/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODA5NzM2NDYsImV4cCI6MTY4MDk3NzI0NiwibmJmIjoxNjgwOTczNjQ2LCJqdGkiOiI2cHpPS2pib1FYWWsxVk01Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.9ygVzW2d4LYeVpi1QWFOnQ7ouWjtI-Ez8mKcYMyg0zQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "1233333333333333333333 12321111111111111111111111111111 12321321111111111111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{IP}}/api/auth/feed/update/1",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/auth/feed/update/1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "1233333333333333333333 12321111111111111111111111111111 12321321111111111111",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/update/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"update",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 17:57:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 17:57:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Feed updated successfully\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "1233333333333333333333 12321111111111111111111111111111 12321321111111111111",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/update/18",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"update",
+										"18"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 17:58:25 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 17:58:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Feed not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "api/auth/feed/delete/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODA5NzM2NDYsImV4cCI6MTY4MDk3NzI0NiwibmJmIjoxNjgwOTczNjQ2LCJqdGkiOiI2cHpPS2pib1FYWWsxVk01Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.9ygVzW2d4LYeVpi1QWFOnQ7ouWjtI-Ez8mKcYMyg0zQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{IP}}/api/auth/feed/delete/2",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/auth/feed/delete/2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/delete/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 18:03:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 18:03:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Feed deleted successfully\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/delete/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 18:04:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Apr 2023 18:04:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Feed not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/auth/feed/comment/3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODEwMTQzMzQsImV4cCI6MTY4MTAxNzkzNCwibmJmIjoxNjgxMDE0MzM0LCJqdGkiOiJuMWlHWXVIOEZpRGZndVlUIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.khIy0ER6_2a99uz9wQ6T6LyZyysQRFFvLkEhbJXhnMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "comment",
+									"value": "Test comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/feed/comment/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"comment",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/api/auth/feed/comment/3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "comment",
+											"value": "Test comment",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/comment/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"comment",
+										"3"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:37:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:37:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Comment added successfully.\",\n    \"data\": {\n        \"comment\": {\n            \"comment\": \"Test comment\",\n            \"rating\": 1,\n            \"rating_comment_share_id\": 2,\n            \"updated_at\": \"2023-04-09T04:37:07.000000Z\",\n            \"created_at\": \"2023-04-09T04:37:07.000000Z\",\n            \"id\": 4\n        },\n        \"ratingCommentShare\": {\n            \"id\": 2,\n            \"feed_id\": 3,\n            \"user_id\": 1,\n            \"rating\": 0,\n            \"shares\": 0,\n            \"created_at\": \"2023-04-09T04:34:06.000000Z\",\n            \"updated_at\": \"2023-04-09T04:34:06.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/auth/feed/getAllComment/3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODEwMTQzMzQsImV4cCI6MTY4MTAxNzkzNCwibmJmIjoxNjgxMDE0MzM0LCJqdGkiOiJuMWlHWXVIOEZpRGZndVlUIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.khIy0ER6_2a99uz9wQ6T6LyZyysQRFFvLkEhbJXhnMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/feed/getAllComment/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"getAllComment",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/auth/feed/getAllComment/3",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/getAllComment/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"getAllComment",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:43:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:43:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"rating_comment_share_id\": 2,\n            \"comment\": \"Test comment\",\n            \"rating\": 1,\n            \"created_at\": \"2023-04-09T04:35:22.000000Z\",\n            \"updated_at\": \"2023-04-09T04:35:22.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"rating_comment_share_id\": 2,\n            \"comment\": \"Test comment\",\n            \"rating\": 1,\n            \"created_at\": \"2023-04-09T04:37:07.000000Z\",\n            \"updated_at\": \"2023-04-09T04:37:07.000000Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/getAllComment/35",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"getAllComment",
+										"35"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:44:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:44:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Comments not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Like Feed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODEwMTQzMzQsImV4cCI6MTY4MTAxNzkzNCwibmJmIjoxNjgxMDE0MzM0LCJqdGkiOiJuMWlHWXVIOEZpRGZndVlUIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.khIy0ER6_2a99uz9wQ6T6LyZyysQRFFvLkEhbJXhnMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/feed/like/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"like",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Like Feed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/like/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"like",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:46:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:46:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Post liked successfully.\",\n    \"data\": {\n        \"id\": 2,\n        \"feed_id\": 3,\n        \"user_id\": 1,\n        \"rating\": 1,\n        \"shares\": 0,\n        \"created_at\": \"2023-04-09T04:34:06.000000Z\",\n        \"updated_at\": \"2023-04-09T04:46:39.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/like/18",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"like",
+										"18"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:51:12 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:51:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Feed not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Share Feed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODEwMTQzMzQsImV4cCI6MTY4MTAxNzkzNCwibmJmIjoxNjgxMDE0MzM0LCJqdGkiOiJuMWlHWXVIOEZpRGZndVlUIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.khIy0ER6_2a99uz9wQ6T6LyZyysQRFFvLkEhbJXhnMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/feed/share/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"share",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Share Feed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/share/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"share",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:55:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:55:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Post shared successfully.\",\n    \"data\": {\n        \"rating_comment_share\": {\n            \"id\": 2,\n            \"feed_id\": 3,\n            \"user_id\": 1,\n            \"rating\": 1,\n            \"shares\": 3,\n            \"created_at\": \"2023-04-09T04:34:06.000000Z\",\n            \"updated_at\": \"2023-04-09T04:55:15.000000Z\"\n        },\n        \"feed_id\": \"3\"\n    }\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/share/19",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"share",
+										"19"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:56:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 04:56:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Feed not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getLikesAmount for Feed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODEwMTQzMzQsImV4cCI6MTY4MTAxNzkzNCwibmJmIjoxNjgxMDE0MzM0LCJqdGkiOiJuMWlHWXVIOEZpRGZndVlUIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.khIy0ER6_2a99uz9wQ6T6LyZyysQRFFvLkEhbJXhnMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/feed/getLikesAmount/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"getLikesAmount",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getLikesAmount for Feed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/getLikesAmount/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"getLikesAmount",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 05:02:59 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 05:02:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"feed_id\": \"3\",\n    \"count\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "getSharesAmount for Feed",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODEwMTQzMzQsImV4cCI6MTY4MTAxNzkzNCwibmJmIjoxNjgxMDE0MzM0LCJqdGkiOiJuMWlHWXVIOEZpRGZndVlUIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.khIy0ER6_2a99uz9wQ6T6LyZyysQRFFvLkEhbJXhnMY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/feed/getSharesAmount/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"feed",
+								"getSharesAmount",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getSharesAmount for Feed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/feed/getSharesAmount/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"feed",
+										"getSharesAmount",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 05:04:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Apr 2023 05:04:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.22"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"feed_id\": \"3\",\n    \"count\": 4\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "test2@mail.ru",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/api/auth/login",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/auth/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test2@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567890",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "3.80.182.138/api/auth/login",
+							"host": [
+								"3",
+								"80",
+								"182",
+								"138"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:37:08 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Unauthorized\"\n}"
+				},
+				{
+					"name": "api/auth/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test2@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "3.80.182.138/api/auth/login",
+							"host": [
+								"3",
+								"80",
+								"182",
+								"138"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:37:17 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMy44MC4xODIuMTM4L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjgwOTY0NjM3LCJleHAiOjE2ODA5NjgyMzcsIm5iZiI6MTY4MDk2NDYzNywianRpIjoiOEFKVjBBdzNSME81RGpFVCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.YIL7heRfvj9QG3DHCT3rrXQ7GZjQWGIoH0ov6s58lHk\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600,\n    \"user\": {\n        \"id\": 2,\n        \"name\": \"Test\",\n        \"surname\": \"Test23\",\n        \"idnp\": \"1234567784\",\n        \"email\": \"test2@mail.ru\",\n        \"type_of_account\": \"user\",\n        \"created_at\": \"2023-04-08T14:36:37.000000Z\",\n        \"updated_at\": \"2023-04-08T14:36:37.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "api/auth/user-profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMy44MC4xODIuMTM4L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjgwOTYzODIzLCJleHAiOjE2ODA5Njc0MjMsIm5iZiI6MTY4MDk2MzgyMywianRpIjoicnk1NjdtWmlhR3hvZ2hGZiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.1VP5C6e-kNVKcxpwmzG7zJJZoL9bgfe4r6SjGuhegnk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{IP}}/api/auth/user-profile",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"user-profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/auth/user-profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "3.80.182.138/api/auth/user-profile",
+							"host": [
+								"3",
+								"80",
+								"182",
+								"138"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user-profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:30:52 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Test\",\n    \"surname\": \"Test23\",\n    \"idnp\": \"123456778\",\n    \"email\": \"test@mail.ru\",\n    \"type_of_account\": \"user\",\n    \"created_at\": \"2023-04-08T09:53:18.000000Z\",\n    \"updated_at\": \"2023-04-08T09:53:18.000000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Test23",
+							"type": "text"
+						},
+						{
+							"key": "idnp",
+							"value": "1234567784",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test2@mail.ru",
+							"type": "text"
+						},
+						{
+							"key": "type_of_account",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/api/auth/register",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/auth/register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Test23",
+									"type": "text"
+								},
+								{
+									"key": "idnp",
+									"value": "123456778",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "type_of_account",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "3.80.182.138/api/auth/register",
+							"host": [
+								"3",
+								"80",
+								"182",
+								"138"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:36:16 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idnp\": [\n        \"The idnp has already been taken.\"\n    ],\n    \"email\": [\n        \"The email has already been taken.\"\n    ]\n}"
+				},
+				{
+					"name": "/api/auth/register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Test23",
+									"type": "text"
+								},
+								{
+									"key": "idnp",
+									"value": "1234567784",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test2@mail.ru",
+									"type": "text"
+								},
+								{
+									"key": "type_of_account",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "3.80.182.138/api/auth/register",
+							"host": [
+								"3",
+								"80",
+								"182",
+								"138"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:36:38 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User successfully registered\",\n    \"user\": {\n        \"name\": \"Test\",\n        \"surname\": \"Test23\",\n        \"idnp\": \"1234567784\",\n        \"email\": \"test2@mail.ru\",\n        \"type_of_account\": \"user\",\n        \"updated_at\": \"2023-04-08T14:36:37.000000Z\",\n        \"created_at\": \"2023-04-08T14:36:37.000000Z\",\n        \"id\": 2\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "api/auth/refresh",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMy44MC4xODIuMTM4L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjgwOTY0NjM3LCJleHAiOjE2ODA5NjgyMzcsIm5iZiI6MTY4MDk2NDYzNywianRpIjoiOEFKVjBBdzNSME81RGpFVCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.YIL7heRfvj9QG3DHCT3rrXQ7GZjQWGIoH0ov6s58lHk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "3.80.182.138/api/auth/refresh",
+					"host": [
+						"3",
+						"80",
+						"182",
+						"138"
+					],
+					"path": [
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "3.80.182.138/api/auth/refresh",
+							"host": [
+								"3",
+								"80",
+								"182",
+								"138"
+							],
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 14:40:02 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMy44MC4xODIuMTM4L2FwaS9hdXRoL3JlZnJlc2giLCJpYXQiOjE2ODA5NjQ2MzcsImV4cCI6MTY4MDk2ODQwMiwibmJmIjoxNjgwOTY0ODAyLCJqdGkiOiJTVkdDT0NGSG45N2htVmU4Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.iiPWWKKzTTS0sdD0pDAeokhIQJUc89lKMLt_gAIfpSw\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600,\n    \"user\": {\n        \"id\": 2,\n        \"name\": \"Test\",\n        \"surname\": \"Test23\",\n        \"idnp\": \"1234567784\",\n        \"email\": \"test2@mail.ru\",\n        \"type_of_account\": \"user\",\n        \"created_at\": \"2023-04-08T14:36:37.000000Z\",\n        \"updated_at\": \"2023-04-08T14:36:37.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "3.80.182.138/api/auth/logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMy44MC4xODIuMTM4L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjgwOTY0NjM3LCJleHAiOjE2ODA5NjgyMzcsIm5iZiI6MTY4MDk2NDYzNywianRpIjoiOEFKVjBBdzNSME81RGpFVCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.YIL7heRfvj9QG3DHCT3rrXQ7GZjQWGIoH0ov6s58lHk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "3.80.182.138/api/auth/logout",
+					"host": [
+						"3",
+						"80",
+						"182",
+						"138"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/auth/change-city",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMy44MC4xODIuMTM4L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjgwOTg3NTEzLCJleHAiOjE2ODA5OTExMTMsIm5iZiI6MTY4MDk4NzUxMywianRpIjoiaklDV2cyYlp5RVpTbksyRCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.GV2iXYcdbbjS6h_jlhVLLu-OMVn3iWibfzqDNY3PK7Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "city",
+							"value": "Chisinau",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IP}}/api/auth/change-city",
+					"host": [
+						"{{IP}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"change-city"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/auth/change-city",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "city",
+									"value": "Chisinau",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{IP}}/api/auth/change-city",
+							"host": [
+								"{{IP}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"change-city"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 21:01:20 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"City was changed\"\n}"
+				}
+			]
+		},
+		{
+			"name": "api/auth/getById/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/getById/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"getById",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/auth/getById/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/getById/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"getById",
+								"1"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Apr 2023 06:48:03 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Apr 2023 06:48:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.22"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Test\",\n        \"surname\": \"Test23\",\n        \"idnp\": \"123456778\",\n        \"email\": \"test@mail.ru\",\n        \"type_of_account\": \"user\",\n        \"candidate_rating\": null,\n        \"created_at\": \"2023-04-08T12:53:18.000000Z\",\n        \"updated_at\": \"2023-04-08T12:53:18.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "api/auth/getByType/user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/getByType/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"getByType",
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/auth/getByType/user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/getByType/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"getByType",
+								"user"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Apr 2023 06:48:59 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Apr 2023 06:48:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.22"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"users\": [\n        {\n            \"id\": 1,\n            \"name\": \"Test\",\n            \"surname\": \"Test23\",\n            \"idnp\": \"123456778\",\n            \"email\": \"test@mail.ru\",\n            \"type_of_account\": \"user\",\n            \"candidate_rating\": null,\n            \"created_at\": \"2023-04-08T12:53:18.000000Z\",\n            \"updated_at\": \"2023-04-08T12:53:18.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "IP",
+			"value": "3.80.182.138"
+		}
+	]
+}

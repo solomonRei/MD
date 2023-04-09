@@ -18,7 +18,7 @@ class FeedController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['index', 'show']]);
+        $this->middleware('auth:api', ['except' => ['index', 'show', 'getByUser']]);
     }
 
     public function index(): \Illuminate\Http\JsonResponse

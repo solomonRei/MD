@@ -169,7 +169,7 @@ class AuthController extends Controller
 
     public function updateRating() {
         // Get all users with type_of_account = 'candidate'
-        $candidates = User::where('type_of_account', 'candidate')->get();
+        $candidates = User::where('type_of_account', '=','candidate')->get();
 
         $candidateRatings = [];
 

@@ -53,8 +53,7 @@ class FeedActionsController extends Controller
         }
 
         $ratingCommentShare = RatingCommentShare::firstOrNew([
-            'feed_id' => $feedId,
-            'user_id' => auth()->user()->id,
+            'feed_id' => $feedId
         ]);
 
         $ratingCommentShare->save();

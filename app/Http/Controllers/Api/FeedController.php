@@ -4,8 +4,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 use App\Models\Feed;
 use App\Models\File;
+use App\Models\RatingCommentShare;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -25,7 +27,7 @@ class FeedController extends Controller
         if ($feeds->isEmpty()) {
             return response()->json(['error' => 'Feeds not found'], 404);
         }
-        return response()->json($feeds, 201);
+        return response()->json(['feeds' => $feeds, 'user' => auth()->user()], 201);
     }
 
     public function getByUser(): \Illuminate\Http\JsonResponse
@@ -38,7 +40,7 @@ class FeedController extends Controller
             return response()->json(['error' => 'Feeds not found'], 404);
         }
 
-        return response()->json($feeds, 201);
+        return response()->json(['feeds' => $feeds, 'user' => auth()->user()], 201);
     }
 
     public function show($id): \Illuminate\Http\JsonResponse
@@ -49,7 +51,40 @@ class FeedController extends Controller
             return response()->json(['error' => 'Feed not found'], 404);
         }
 
-        return response()->json($feed, 201);
+        return response()->json(['feed' => $feed, 'user' => auth()->user()], 201);
+    }
+
+    private function getComments($feedId)
+    {
+        $ratingCommentShare = RatingCommentShare::where('feed_id', $feedId)->first();
+
+        if (!$ratingCommentShare) {
+            return [];
+        }
+
+        return Comment::where('rating_comment_share_id', $ratingCommentShare->id)->get();
+    }
+
+    private function getLikes($feedId)
+    {
+        $ratingCommentShareCount = RatingCommentShare::where('feed_id', $feedId)->first();
+
+        if (!$ratingCommentShareCount) {
+            return [];
+        }
+
+        return $ratingCommentShareCount->rating;
+    }
+
+    private function getShares($feedId)
+    {
+        $ratingCommentShareCount = RatingCommentShare::where('feed_id', $feedId)->first();
+
+        if (!$ratingCommentShareCount) {
+           return [];
+        }
+
+        return $ratingCommentShareCount->shares;
     }
 
     /**

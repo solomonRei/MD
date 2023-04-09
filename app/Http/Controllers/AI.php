@@ -24,8 +24,7 @@ class AI extends Controller
         $output_text_with_emoji = $analyzer->getSentiment("Aproko doctor made me 🤣.");
 
         $ld = new Language;
-
-         GoogleTranslate::trans('Пошел нахуй?', 'en');
+        
 
         print_r($output_text);
         print_r($output_emoji);

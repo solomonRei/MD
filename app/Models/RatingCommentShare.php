@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class RatingCommentShare extends Model
 {
+    protected $table = 'rating_comments_shares';
+
     protected $fillable = [
         'user_id',
         'feed_id',
@@ -22,5 +24,10 @@ class RatingCommentShare extends Model
     public function feed()
     {
         return $this->belongsTo(Feed::class);
+    }
+
+    public function comments()
+    {
+        return $this->belongsToMany(Comment::class, 'rating_comments_shares');
     }
 }

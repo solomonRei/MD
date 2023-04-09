@@ -34,6 +34,9 @@ Route::group([
         Route::get('/getAll', [FeedController::class, 'index']);
         Route::get('/get/{id}', [FeedController::class, 'show']);
         Route::get('/getByUser', [FeedController::class, 'getByUser']);
+        Route::get('/getAllComment/{feedId}', [FeedActionsController::class, 'getComments']);
+        Route::get('/getLikesAmount/{feedId}', [FeedActionsController::class, 'getLikes']);
+        Route::get('/getSharesAmount/{feedId}', [FeedActionsController::class, 'getShares']);
         Route::post('/create', [FeedController::class, 'create']);
         Route::post('/update/{id}', [FeedController::class, 'update']);
         Route::post('/delete/{id}', [FeedController::class, 'destroy']);

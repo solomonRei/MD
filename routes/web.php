@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', function () {
+    return response()->json(['error' => 'Unauthorized'], 401);
+})->name('login');
+
 //Route::get('/geocoding', [\App\Http\Controllers\GeocodingController::class, 'getCityByCoords']);

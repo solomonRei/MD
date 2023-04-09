@@ -127,6 +127,14 @@ class AuthController extends Controller
         return response()->json(['message' => 'City was changed']);
     }
 
+    private function calculateCandidateRating($likes, $comments_rate, $shares): float
+    {
+        return $likes * 0.4 +
+            $comments_rate * 0.4 +
+            $shares * 0.3;
+    }
+
+
     public function updateRating() {
         // Get all users with type_of_account = 'candidate'
         $candidates = User::where('type_of_account', 'candidate')->get();
@@ -143,19 +151,30 @@ class AuthController extends Controller
             $shares = 0;
 
             // Loop through feeds resolved by the candidate
+            $rating_com = 1;
             foreach ($feeds as $feed) {
                 // Find the rating, comments, and shares for the feed
                 $ratingCommentShare = RatingCommentShare::where('feed_id', $feed->id)->first();
 
                 if ($ratingCommentShare) {
                     $likes += $ratingCommentShare->likes;
-                    $comments += $ratingCommentShare->comments;
                     $shares += $ratingCommentShare->shares;
+
+                    // Find the comments for the rating comment share
+                    $feed_comments = Comment::where('rating_comment_share_id', $ratingCommentShare->id)->get();
+
+                    // Loop through comments and calculate the total rating
+                    foreach ($feed_comments as $comment) {
+                        $rating_com += $comment->rating;
+                    }
+
+                    $comments += count($feed_comments);
                 }
             }
+            $comments_rate = $rating_com/$comments;
 
             // Calculate the candidate's rating
-            $rating = $this->calculateCandidateRating($likes, $comments, $shares);
+            $rating = $this->calculateCandidateRating($likes, $comments_rate, $shares);
 
             // Add the candidate's rating to the array
             $candidateRatings[] = [

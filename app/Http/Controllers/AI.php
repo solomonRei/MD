@@ -25,7 +25,7 @@ class AI extends Controller
 
         $ld = new Language;
 
-        echo GoogleTranslate::trans('Пошел нахуй?', 'en');
+         GoogleTranslate::trans('Пошел нахуй?', 'en');
 
         print_r($output_text);
         print_r($output_emoji);

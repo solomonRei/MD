@@ -207,14 +207,15 @@ class FeedController extends Controller
 
             $validator = Validator::make($request->all(), [
                 'content' => 'required|string|min:50',
-                'file.*' => 'file|mimes:jpeg,png,pdf',
+                'image.*' => 'file|mimes:jpeg,png,pdf',
             ]);
             if ($validator->fails()) {
                 return response()->json($validator->errors(), 422);
             }
 
             DB::beginTransaction();
-            $file = $request->file('file');
+            $image = $request->file('image');
+            $file = $image[0];
             $file_id = 1;
             if ($file) {
                 $fileModel = new File();

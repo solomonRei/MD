@@ -26,6 +26,8 @@ Route::group([
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
+    Route::get('/getById/{id}', [AuthController::class, 'getById']);
+    Route::get('/getByType/{type}', [AuthController::class, 'getByType']);
     Route::post('/change-city', [AuthController::class, 'changeCity']);
     Route::post('/update-rating', [AuthController::class, 'updateRating']);
     Route::get('/ai', [\App\Http\Controllers\AI::class, 'index']);

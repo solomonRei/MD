@@ -14,7 +14,7 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register', 'updateRating']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'updateRating', 'getById', 'getByType']]);
     }
 
     public function login(Request $request)
@@ -31,6 +31,38 @@ class AuthController extends Controller
         }
         return $this->createNewToken($token);
     }
+
+    public function getById($id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json([
+                'message' => 'User not found.',
+            ], 404);
+        }
+
+        return response()->json([
+            'user' => $user,
+        ], 201);
+    }
+
+    public function getByType($type)
+    {
+        $users = User::where('type_of_account', $type)->get();
+
+        if ($users->isEmpty()) {
+            return response()->json([
+                'message' => 'No users found with the given account type.',
+            ], 404);
+        }
+
+        return response()->json([
+            'users' => $users,
+        ], 201);
+    }
+
+
 
 
     public function register(Request $request)

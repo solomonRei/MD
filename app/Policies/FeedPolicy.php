@@ -43,7 +43,7 @@ class FeedPolicy
     {
         // Only authenticated users can create feeds
 
-        return auth()->check() && $user->type_of_account === 'user';
+        return auth()->check();
     }
 
     /**
@@ -56,7 +56,7 @@ class FeedPolicy
     public function update(User $user, Feed $feed)
     {
         // Users can only update their own feeds
-        return $user->id === $feed->user_id && $user->type_of_account === 'user';
+        return $user->id === $feed->user_id;
     }
 
     /**

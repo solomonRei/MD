@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -164,6 +165,33 @@ class AuthController extends Controller
         return $likes * 0.4 +
             $comments_rate * 0.4 +
             $shares * 0.3;
+    }
+
+    public function uploadImage(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'image.*' => 'file|mimes:jpeg,png,pdf',
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
+        $file = $request->file('image');
+//        $file = $image[0];
+        $user = User::find(auth()->user()->id);
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+        $randomName = Str::random(40);
+        $extension = $file->getClientOriginalExtension();
+        $fileName = "{$randomName}.{$extension}";
+
+        $user->image = url('/uploads/' . $fileName);
+        $user->save();
+
+        $file->move(public_path('uploads'), $fileName);
+
+        return response()->json(['message' => 'Image updated successfully'], 201);
     }
 
 

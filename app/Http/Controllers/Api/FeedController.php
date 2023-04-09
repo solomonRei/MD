@@ -215,7 +215,7 @@ class FeedController extends Controller
 
             DB::beginTransaction();
             $file = $request->file('file');
-            $file_id = null;
+            $file_id = 1;
             if ($file) {
                 $this->authorize('create', [File::class, $user_id]);
                 $fileModel = new File();

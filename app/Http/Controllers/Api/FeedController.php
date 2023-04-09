@@ -207,7 +207,7 @@ class FeedController extends Controller
 
             $validator = Validator::make($request->all(), [
                 'content' => 'required|string|min:50',
-                'files.*' => 'file|mimes:jpeg,png,pdf|max:2048',
+                'file.*' => 'file|mimes:jpeg,png,pdf',
             ]);
             if ($validator->fails()) {
                 return response()->json($validator->errors(), 422);
@@ -217,7 +217,6 @@ class FeedController extends Controller
             $file = $request->file('file');
             $file_id = 1;
             if ($file) {
-                $this->authorize('create', [File::class, $user_id]);
                 $fileModel = new File();
 
                 $randomName = Str::random(40);

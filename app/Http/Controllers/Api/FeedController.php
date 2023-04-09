@@ -44,6 +44,7 @@ class FeedController extends Controller
                     'rating' => $ratingCommentShare->rating,
                     'comments' => $commentsCount,
                     'shares' => $ratingCommentShare->shares,
+                    'user' => $feed->user()
                 ];
             } else {
                 $results[] = [
@@ -55,6 +56,7 @@ class FeedController extends Controller
                     'rating' => 0,
                     'comments' => 0,
                     'shares' => 0,
+                    'user' => $feed->user()
                 ];
             }
         }
@@ -104,6 +106,7 @@ class FeedController extends Controller
                     'rating' => $ratingCommentShare->rating,
                     'comments' => $commentsCount,
                     'shares' => $ratingCommentShare->shares,
+                    'user' => $feed->user()
                 ];
             } else {
                 $results[] = [
@@ -115,6 +118,7 @@ class FeedController extends Controller
                     'rating' => 0,
                     'comments' => 0,
                     'shares' => 0,
+                    'user' => $feed->user()
                 ];
             }
         }
@@ -145,6 +149,7 @@ class FeedController extends Controller
                 'rating' => $ratingCommentShare->rating,
                 'comments' => $commentsCount,
                 'shares' => $ratingCommentShare->shares,
+                'user' => $feed->user()
             ];
         } else {
             $results = [
@@ -156,6 +161,7 @@ class FeedController extends Controller
                 'rating' => 0,
                 'comments' => 0,
                 'shares' => 0,
+                'user' => $feed->user()
             ];
         }
 

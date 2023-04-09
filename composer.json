@@ -6,13 +6,17 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "davmixcool/php-sentiment-analyzer": "^1.2",
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "mll-lab/laravel-graphql-playground": "^2.6",
         "nuwave/lighthouse": "^6.6",
+        "patrickschur/language-detection": "^5.2",
+        "php-ai/php-ml": "^0.10.0",
         "spatie/geocoder": "^3.14",
+        "stichoza/google-translate-php": "^5.1",
         "tymon/jwt-auth": "^2.0",
         "webonyx/graphql-php": "^15.2"
     },

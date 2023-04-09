@@ -26,6 +26,7 @@ class User extends Authenticatable implements JWTSubject
         'idnp',
         'type_of_account',
         'phone',
+        'candidate_rating',
         'city',
     ];
 

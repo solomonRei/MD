@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Feed;
+use App\Models\RatingCommentShare;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +14,7 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'updateRating']]);
     }
 
     public function login(Request $request)
@@ -123,5 +125,53 @@ class AuthController extends Controller
         $user->save();
 
         return response()->json(['message' => 'City was changed']);
+    }
+
+    public function updateRating() {
+        // Get all users with type_of_account = 'candidate'
+        $candidates = User::where('type_of_account', 'candidate')->get();
+
+        $candidateRatings = [];
+
+        // Loop through candidates
+        foreach ($candidates as $candidate) {
+            // Find all feeds resolved by the candidate
+            $feeds = Feed::where('resolved_by', $candidate->id)->get();
+
+            $likes = 0;
+            $comments = 0;
+            $shares = 0;
+
+            // Loop through feeds resolved by the candidate
+            foreach ($feeds as $feed) {
+                // Find the rating, comments, and shares for the feed
+                $ratingCommentShare = RatingCommentShare::where('feed_id', $feed->id)->first();
+
+                if ($ratingCommentShare) {
+                    $likes += $ratingCommentShare->likes;
+                    $comments += $ratingCommentShare->comments;
+                    $shares += $ratingCommentShare->shares;
+                }
+            }
+
+            // Calculate the candidate's rating
+            $rating = $this->calculateCandidateRating($likes, $comments, $shares);
+
+            // Add the candidate's rating to the array
+            $candidateRatings[] = [
+                'id' => $candidate->id,
+                'name' => $candidate->name,
+                'rating' => $rating,
+            ];
+        }
+
+        // Sort the candidate ratings by rating, in descending order
+        usort($candidateRatings, function($a, $b) {
+            return $b['rating'] - $a['rating'];
+        });
+
+        return response()->json([
+            'data' => $candidateRatings,
+        ]);
     }
 }

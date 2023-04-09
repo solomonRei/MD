@@ -14,6 +14,11 @@ use Illuminate\Support\Str;
 class FeedController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['index', 'show']]);
+    }
+
     public function index(): \Illuminate\Http\JsonResponse
     {
         $feeds = Feed::all();

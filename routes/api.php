@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FeedController;
+use App\Http\Controllers\FeedActionsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,14 +27,19 @@ Route::group([
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
     Route::post('/change-city', [AuthController::class, 'changeCity']);
+    Route::post('/update-rating', [AuthController::class, 'updateRating']);
+    Route::get('/ai', [\App\Http\Controllers\AI::class, 'index']);
 
-    Route::prefix('feed')->middleware('auth:api')->except(['getAll', 'get/{id}'])->group(function () {
-        Route::post('/getAll', [FeedController::class, 'index']);
-        Route::post('/get/{id}', [FeedController::class, 'show']);
-        Route::post('/getByUser', [FeedController::class, 'getByUser']);
+    Route::prefix('feed')->group(function () {
+        Route::get('/getAll', [FeedController::class, 'index']);
+        Route::get('/get/{id}', [FeedController::class, 'show']);
+        Route::get('/getByUser', [FeedController::class, 'getByUser']);
         Route::post('/create', [FeedController::class, 'create']);
         Route::post('/update/{id}', [FeedController::class, 'update']);
         Route::post('/delete/{id}', [FeedController::class, 'destroy']);
+        Route::post('/like/{feedId}', [FeedActionsController::class, 'like']);
+        Route::post('/comment/{feedId}', [FeedActionsController::class, 'comment']);
+        Route::post('/share/{feedId}', [FeedActionsController::class, 'share']);
     });
 
 });
